@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "213704985614",
+    "project_id": "authenticatorapp-fbaa2",
+    "storage_bucket": "authenticatorapp-fbaa2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213704985614:android:ff67c09f3aa0eafca5805f",
+        "android_client_info": {
+          "package_name": "com.my.authenticatorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213704985614-hdmmq52dr7uenop2jlgosue74j7avd3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9S7dEkaV0o9rBdPRy_dTVaatPEHXFncc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213704985614-hdmmq52dr7uenop2jlgosue74j7avd3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
