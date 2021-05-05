@@ -39,14 +39,17 @@ public class Login extends AppCompatActivity {
         mPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
-        mLoginBtn = findViewById(R.id.loginBtn);
+        mLoginBtn = (Button) findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
         forgotTextLink = findViewById(R.id.forgotPassword);
+
 
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Intent intent = new Intent(Login.this,dashboard.class);
+
 
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
@@ -75,7 +78,8 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),NavigationDrawer.class));
+                            //startActivity(intent);
                         }else {
                             Toast.makeText(Login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
@@ -138,4 +142,6 @@ public class Login extends AppCompatActivity {
 
 
     }
+
+
 }

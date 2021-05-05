@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">213704985614-hdmmq52dr7uenop2jlgosue74j7avd3m.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">213704985614</string>
+    <string name="google_api_key" translatable="false">AIzaSyB9S7dEkaV0o9rBdPRy_dTVaatPEHXFncc</string>
+    <string name="google_app_id" translatable="false">1:213704985614:android:ff67c09f3aa0eafca5805f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB9S7dEkaV0o9rBdPRy_dTVaatPEHXFncc</string>
+    <string name="google_storage_bucket" translatable="false">authenticatorapp-fbaa2.appspot.com</string>
+    <string name="project_id" translatable="false">authenticatorapp-fbaa2</string>
+</resources>
