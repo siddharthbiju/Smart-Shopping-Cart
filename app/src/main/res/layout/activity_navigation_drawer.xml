@@ -9,8 +9,7 @@
     android:background="#F7FFFFFF"
     android:minWidth="19dp">
 
-    <include
-        layout="@layout/appbar"/>
+    <include layout="@layout/appbar" />
 
     <ScrollView
         android:layout_width="wrap_content"

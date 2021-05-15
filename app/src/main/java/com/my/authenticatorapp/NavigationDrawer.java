@@ -54,7 +54,10 @@ public class NavigationDrawer extends AppCompatActivity {
                         Toast.makeText(NavigationDrawer.this, "Logged Out...", Toast.LENGTH_SHORT).show();
                         break;
 
-
+                    case  R.id.cart:
+                        Intent intent3 = new Intent(NavigationDrawer.this, Cart.class);
+                        startActivity(intent3);
+                        break;
 
                 }
                 return false;

@@ -822,6 +822,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -1772,6 +1773,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
 drawable walpaper
+drawable wel
 font aclonica
 id ALT
 id BOTTOM_END
@@ -1781,6 +1783,7 @@ id Email
 id FUNCTION
 id META
 id NO_DEBUG
+id Recycle
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1976,9 +1979,11 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imageView2
 id imageView3
 id imageView4
+id imageView5
 id info
 id invisible
 id inward
@@ -2101,6 +2106,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id refresh
 id registerBtn
 id resendCode
 id resetPasswordLocal
@@ -2183,10 +2189,12 @@ id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
 id text2
+id textDesc
 id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textTitle
 id textTop
 id textView
 id textView2
@@ -2297,11 +2305,14 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_cart
 layout activity_edit_profile
 layout activity_login
 layout activity_main
 layout activity_navigation_drawer
+layout activity_product
 layout activity_register
+layout activity_splash
 layout appbar
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2388,7 +2399,12 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu navigationmenu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap welc
+mipmap welc_background
+mipmap welc_foreground
+mipmap welc_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -3365,6 +3381,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text
