@@ -11,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthenticatorApp">
-        <activity android:name=".NavigationDrawer" />
-        <!--<activity android:name="second" />-->
+        <activity android:name=".MainActivity2"></activity>
+        <activity android:name=".NavigationDrawer" /> <!-- <activity android:name="second" /> -->
         <activity android:name=".EditProfile" />
         <activity android:name=".Register" />
-        <activity android:name=".Cart"/>
-        <activity android:name=".Login"/>
+        <activity android:name=".Cart" />
+        <activity android:name=".Login" />
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
