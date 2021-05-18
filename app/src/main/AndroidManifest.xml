@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthenticatorApp">
         <activity android:name=".NavigationDrawer"></activity>
-        <activity android:name=".second" />
+
         <activity android:name=".EditProfile" />
         <activity android:name=".Login" />
         <activity android:name=".Register">
