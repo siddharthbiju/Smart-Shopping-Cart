@@ -25,8 +25,8 @@
         <!-- <activity android:name="second" /> -->
         <activity android:name="com.my.authenticatorapp.EditProfile" />
         <activity android:name="com.my.authenticatorapp.Register" />
-        <activity android:name="com.my.authenticatorapp.Cart" />
         <activity android:name="com.my.authenticatorapp.Login" />
+        <activity android:name="com.my.authenticatorapp.Cart" />
         <activity android:name="com.my.authenticatorapp.splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

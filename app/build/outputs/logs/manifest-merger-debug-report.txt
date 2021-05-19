@@ -142,14 +142,14 @@ activity#com.my.authenticatorapp.Register
 ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:17:9-46
 	android:name
 		ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:17:19-43
-activity#com.my.authenticatorapp.Cart
-ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:18:9-41
-	android:name
-		ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:18:19-39
 activity#com.my.authenticatorapp.Login
-ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:19:9-42
+ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:18:9-42
 	android:name
-		ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:19:19-40
+		ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:18:19-40
+activity#com.my.authenticatorapp.Cart
+ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:19:9-41
+	android:name
+		ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:19:19-39
 activity#com.my.authenticatorapp.splash
 ADDED from C:\Users\sachi\AndroidStudioProjects\smart-shopping-cart\app\src\main\AndroidManifest.xml:20:9-26:20
 	android:name
