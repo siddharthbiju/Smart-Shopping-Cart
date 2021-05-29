@@ -59,6 +59,7 @@ public class NavigationDrawer extends AppCompatActivity {
                         startActivity(intent3);
                         break;
 
+
                 }
                 return false;
             }

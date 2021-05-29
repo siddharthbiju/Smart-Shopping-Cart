@@ -188,6 +188,10 @@
         "source": "C:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\src\\main\\res\\drawable\\ic_baseline_shopping_cart_24.xml"
     },
     {
+        "merged": "C:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main2.xml.flat",
+        "source": "C:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\src\\main\\res\\layout\\activity_main2.xml"
+    },
+    {
         "merged": "C:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\res\\merged\\debug\\drawable_walpaper.jpg.flat",
         "source": "C:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\src\\main\\res\\drawable\\walpaper.jpg"
     },
