@@ -2197,6 +2197,8 @@ id test_radiobutton_app_button_tint
 id text
 id text2
 id textDesc
+id textDesc2
+id textDesc3
 id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -2446,6 +2448,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string button
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern

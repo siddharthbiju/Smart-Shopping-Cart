@@ -2196,6 +2196,8 @@ int id test_radiobutton_app_button_tint 0x7f0a019f
 int id text 0x7f0a01a0
 int id text2 0x7f0a01a1
 int id textDesc 0x7f0a01a2
+int id textDesc2 0x7f0a01e4
+int id textDesc3 0x7f0a01e5
 int id textEnd 0x7f0a01a3
 int id textSpacerNoButtons 0x7f0a01a4
 int id textSpacerNoTitle 0x7f0a01a5
@@ -2445,6 +2447,7 @@ int string app_name 0x7f11001b
 int string appbar_scrolling_view_behavior 0x7f11001c
 int string bottom_sheet_behavior 0x7f11001d
 int string bottomsheet_action_expand_halfway 0x7f11001e
+int string button 0x7f110081
 int string character_counter_content_description 0x7f11001f
 int string character_counter_overflowed_content_description 0x7f110020
 int string character_counter_pattern 0x7f110021

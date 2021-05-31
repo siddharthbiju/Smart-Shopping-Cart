@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -28,19 +29,21 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class Cart extends AppCompatActivity {
-    String cid="FF 19";
+    String cid="cart001";
     RecyclerView recyclerView;
     Adapter adapter;
     ArrayList<String> items;
     ArrayList<String> desc;
     ArrayList<String> rfid;
+    ArrayList<Integer> quantity;
     FirebaseFirestore db= FirebaseFirestore.getInstance();
     FirebaseFirestore db1= FirebaseFirestore.getInstance();
     CollectionReference dbs = db.collection("Items");
-    CollectionReference dbss = db1.collection("Cart/CartID/"+cid);
+    CollectionReference dbss = db1.collection(cid+"/products/itemsCollections");
     SwipeRefreshLayout refreshLayout;
-    int s3,total,k;
+    int s3,total,k,x,z,tz;
     String s1,s2,s5,s4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +52,13 @@ public class Cart extends AppCompatActivity {
         items = new ArrayList<>();
         desc = new ArrayList<>();
         rfid = new ArrayList<>();
+        quantity = new ArrayList<>();
+
         refreshLayout = findViewById(R.id.refresh);
 
         recyclerView = findViewById(R.id.Recycle);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new Adapter(this,items,desc);
+        adapter = new Adapter(this,items,desc,quantity);
         recyclerView.setAdapter(adapter);
         showData();
 
@@ -67,13 +72,21 @@ public class Cart extends AppCompatActivity {
         });
 
     }
+
+    public void next(int val){
+
+        if(val==1){
+            Intent intent11 = new Intent(Cart.this, NavigationDrawer.class);
+            startActivity(intent11);
+        }
+    }
     public void showData() {
 
         dbss.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task1) {
                 for (DocumentSnapshot snap : task1.getResult()){
-                    s4 = snap.getString("Value");
+                    s4 = snap.getString("item_name");
                     Log.d("output","rfid value = "+s4);
                     rfid.add(s4);
                 }
@@ -104,14 +117,13 @@ public class Cart extends AppCompatActivity {
                                     s3 = Integer.parseInt(s2);
                                     total = total + s3;
                                     items.add(s1);
-                                    desc.add("Rs." + s2);
+                                    desc.add(s2);
                                 }
 
                             }
                         }
-                        items.add("Total");
-                        desc.add("Rs." + total);
-                        adapter.notifyDataSetChanged();
+
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -119,6 +131,32 @@ public class Cart extends AppCompatActivity {
                         Toast.makeText(Cart.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 });
+        tz=0;
+        quantity.clear();
+        for(k = 0 ; k < items.size() ; k++){
+            z=1;
+            for(x = k+1 ; x < items.size() ; x++){
+                if(items.get(k).equals(items.get(x))){
+                    z = z+1;
+                    Log.d("output","Same");
+                    items.remove(x);
+                    desc.remove(x);
+                }
+                else{continue;}
+            }
+            quantity.add(z);
+            tz = tz + z;
+        }
+        if(k == items.size()){
+            quantity.add(tz);
+            quantity.add(0);
+        }
+        items.add("Total");
+        desc.add(String.valueOf(total));
+        Log.d("output","items:\n"+items);
+        Log.d("output","\ndesc:\n"+desc);
+        Log.d("output","\nqnt:\n"+quantity);
+        adapter.notifyDataSetChanged();
          }
 
     }
