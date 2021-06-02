@@ -22,20 +22,20 @@ static const uint8_t D8   = 15;
 #define WIFI_PASSWORD "@# colonel 98 #@"
 
 /* 2. Define the Firebase project host name and API Key */
-#define FIREBASE_HOST "https://esp8266-9f125-default-rtdb.firebaseio.com"
+#define FIREBASE_HOST "authenticatorapp-fbaa2.firebaseapp.com"
 
-#define API_KEY "AIzaSyAiKE6rU0ph4N8ocXuEnwwCJ_kg2QM4rfI"
+#define API_KEY "AIzaSyB9S7dEkaV0o9rBdPRy_dTVaatPEHXFncc"
 
 /* 3. Define the project ID */
-#define FIREBASE_PROJECT_ID "esp8266-9f125"
+#define FIREBASE_PROJECT_ID "authenticatorapp-fbaa2"
 
 /* 4. Define the user Email and password that alreadey registerd or added in your project */
-#define USER_EMAIL "siddharthbiju@gmail.com"
+#define USER_EMAIL "sscproject0123@gmail.com"
 #define USER_PASSWORD "123456"
 
 /* 5. Define the SS and RST pin */
 #define SS_PIN D4 
-#define RST_PIN D3 
+#define RST_PIN D8 
 
 /* 6. Define the pin used to take button input */
 #define BUTTON_PIN  D2
@@ -62,9 +62,9 @@ int out = 0;
 void setup() 
 {
   pinMode(D1, OUTPUT);
-  pinMode(D8, OUTPUT);
+  pinMode(D0, OUTPUT);
   digitalWrite(D1, HIGH);
-  digitalWrite(D8, LOW);
+  digitalWrite(D0, LOW);
   Serial.begin(9600);   // Initiate a serial communication
   SPI.begin();      // Initiate  SPI bus
   mfrc522.PCD_Init();   // Initiate MFRC522
@@ -101,7 +101,7 @@ void loop()
   digitalWrite(D1, HIGH);   
   button.loop();
   if (millis() - dataMillisLock > 30000 && isLocked > 0){
-    digitalWrite(D8, LOW);
+    digitalWrite(D0, LOW);
     isLocked=0;
     Serial.print("Pin lowed, lock locked");
   }
@@ -124,7 +124,7 @@ void loop()
   {
      Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
      Serial.print(mfrc522.uid.uidByte[i], HEX);
-     content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+     //content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
      content.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
   content.toUpperCase();
@@ -140,13 +140,13 @@ void writeToFirebase(String x){
   if (millis() - dataMillis > 100 || dataMillis == 0)
     {
         dataMillis = millis();
-      
+
         String content;
         FirebaseJson js;
 
         String documentPath = "cart001/products/itemsCollections/item" + String(count);
 
-        js.set("fields/item_name/stringValue", String(x));
+        js.set("fields/item_name/stringValue",String(x));
 
         js.toString(content);
 
@@ -200,7 +200,7 @@ void tap(Button2& btn) {
               isLocked=0;
             }else{
               Serial.println(testingValue);
-              digitalWrite(D8, HIGH);
+              digitalWrite(D0, HIGH);
               dataMillisLock = millis();
               isLocked=1;
               count = 0;
@@ -222,7 +222,7 @@ void tap(Button2& btn) {
     else
         {
             isLocked=0;
-            digitalWrite(D8, LOW);
+            digitalWrite(D0, LOW);
             Serial.println("FAILED");
             Serial.println("REASON: " + fbdo.errorReason());
             Serial.println("------------------------------------");
