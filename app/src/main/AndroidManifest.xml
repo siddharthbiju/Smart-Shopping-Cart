@@ -3,6 +3,7 @@
     package="com.my.authenticatorapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -17,7 +18,10 @@
         <activity android:name=".Register" />
         <activity android:name=".Cart"/>
         <activity android:name=".Login"/>
-        <activity android:name=".splash">
+        <activity android:name=".splash"/>
+        <activity android:name=".MainActivity2" >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

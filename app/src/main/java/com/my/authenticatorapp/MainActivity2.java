@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -26,7 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         initializeViews();
 
@@ -41,9 +40,6 @@ public class MainActivity2 extends AppCompatActivity {
                 payUsingUpi(amount, upiId, name, note);
             }
         });
-    }
-
-    public void setContentView(int activity_main) {
     }
 
     void initializeViews() {
