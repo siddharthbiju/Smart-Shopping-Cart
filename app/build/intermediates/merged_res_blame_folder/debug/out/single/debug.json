@@ -72,10 +72,6 @@
         "source": "E:\\ssc app development\\smart-shopping-cart123\\app\\src\\main\\res\\mipmap-mdpi\\welc_background.png"
     },
     {
-        "merged": "E:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\res\\merged\\debug\\drawable_walle.jpg.flat",
-        "source": "E:\\ssc app development\\smart-shopping-cart123\\app\\src\\main\\res\\drawable\\walle.jpg"
-    },
-    {
         "merged": "E:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_welc.png.flat",
         "source": "E:\\ssc app development\\smart-shopping-cart123\\app\\src\\main\\res\\mipmap-mdpi\\welc.png"
     },
@@ -90,10 +86,6 @@
     {
         "merged": "E:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "E:\\ssc app development\\smart-shopping-cart123\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
-        "merged": "E:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\res\\merged\\debug\\drawable_wall.jpg.flat",
-        "source": "E:\\ssc app development\\smart-shopping-cart123\\app\\src\\main\\res\\drawable\\wall.jpg"
     },
     {
         "merged": "E:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_welc_background.png.flat",

@@ -1774,10 +1774,8 @@ int drawable test_custom_background 0x7f0800b4
 int drawable tooltip_frame_dark 0x7f0800b5
 int drawable tooltip_frame_light 0x7f0800b6
 int drawable user 0x7f0800b7
-int drawable wall 0x7f0800b8
-int drawable walle 0x7f0800b9
-int drawable walpaper 0x7f0800ba
-int drawable wel 0x7f0800bb
+int drawable walpaper 0x7f0800b8
+int drawable wel 0x7f0800b9
 int font aclonica 0x7f090000
 int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001
