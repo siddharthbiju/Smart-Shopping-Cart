@@ -18,6 +18,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,7 @@ public class Cart extends AppCompatActivity {
     SwipeRefreshLayout refreshLayout;
     int s3,total,k,x,z,tz;
     String s1,s2,s5,s4;
+    Handler handle;
 
 
     @Override
@@ -53,6 +55,10 @@ public class Cart extends AppCompatActivity {
         desc = new ArrayList<>();
         rfid = new ArrayList<>();
         quantity = new ArrayList<>();
+
+        this.handle = new Handler();
+
+        this.handle.postDelayed(runn,5000);
 
         refreshLayout = findViewById(R.id.refresh);
 
@@ -72,7 +78,25 @@ public class Cart extends AppCompatActivity {
         });
 
     }
+    private final Runnable runn = new Runnable()
+    {
+        public void run()
 
+        {
+            showData();
+            Cart.this.handle.postDelayed(runn, 5000);
+        }
+
+    };
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handle.removeCallbacks(runn);
+        finish();
+
+    }
     public void next(int val){
 
         if(val==1){
@@ -81,7 +105,7 @@ public class Cart extends AppCompatActivity {
         }
     }
     public void showData() {
-
+        rfid.clear();
         dbss.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task1) {
@@ -97,8 +121,9 @@ public class Cart extends AppCompatActivity {
                 Toast.makeText(Cart.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
-
-
+        getdata();
+         }
+    public void getdata(){
         db.collection("Items").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -106,58 +131,62 @@ public class Cart extends AppCompatActivity {
                         items.clear();
                         desc.clear();
                         total = 0;
-                        for (k = 0 ; k < rfid.size() ; k++)
-                        {
-                            s4 = rfid.get(k);
-                            for (DocumentSnapshot snapshot : task.getResult()) {
-                                s1 = snapshot.getString("Name");
-                                s2 = snapshot.getString("Price");
-                                s5 = snapshot.getString("RFID value");
+                        for (DocumentSnapshot snapshot : task.getResult()) {
+                            s1 = snapshot.getString("Name");
+                            s2 = snapshot.getString("Price");
+                            s5 = snapshot.getString("RFID value");
+                            Log.d("output","Item name = "+s1);
+                            Log.d("output","Item rfid = "+s5);
+                            for( k = 0 ; k < rfid.size() ; k++ ){
+                                s4 = rfid.get(k);
                                 if (s4.equals(s5)){
+                                    Log.d("output","Item match rfid = "+s4);
                                     s3 = Integer.parseInt(s2);
                                     total = total + s3;
                                     items.add(s1);
                                     desc.add(s2);
                                 }
-
+                                else{Log.d("output","Item mismatch  = "+s4);continue;}
                             }
+
                         }
+                        tz=0;
+                        quantity.clear();
+                        for(k = 0 ; k < items.size() ; k++){
+                            z=1;
+                            for(x = k+1 ; x < items.size() ; x++){
+                                if(items.get(k).equals(items.get(x))){
+                                    z = z+1;
+                                    Log.d("output","Same");
+                                    items.remove(x);
+                                    desc.remove(x);
+                                }
+                                else{continue;}
+                            }
+                            quantity.add(z);
+                            tz = tz + z;
+                        }
+                        if(k == items.size()){
+                            quantity.add(tz);
+                            quantity.add(0);
+                        }
+                        items.add("Total");
+                        desc.add(String.valueOf(total));
+                        Log.d("output","items:\n"+items);
+                        Log.d("output","\ndesc:\n"+desc);
+                        Log.d("output","\nqnt:\n"+quantity);
+                        adapter.notifyDataSetChanged();
 
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Cart.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
-                    }
-                });
-        tz=0;
-        quantity.clear();
-        for(k = 0 ; k < items.size() ; k++){
-            z=1;
-            for(x = k+1 ; x < items.size() ; x++){
-                if(items.get(k).equals(items.get(x))){
-                    z = z+1;
-                    Log.d("output","Same");
-                    items.remove(x);
-                    desc.remove(x);
-                }
-                else{continue;}
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Cart.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
             }
-            quantity.add(z);
-            tz = tz + z;
-        }
-        if(k == items.size()){
-            quantity.add(tz);
-            quantity.add(0);
-        }
-        items.add("Total");
-        desc.add(String.valueOf(total));
-        Log.d("output","items:\n"+items);
-        Log.d("output","\ndesc:\n"+desc);
-        Log.d("output","\nqnt:\n"+quantity);
-        adapter.notifyDataSetChanged();
-         }
+        });
+
+    }
 
     }
 

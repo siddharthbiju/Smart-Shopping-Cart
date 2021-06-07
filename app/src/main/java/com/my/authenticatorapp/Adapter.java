@@ -32,7 +32,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private List<Integer> data3;
     private ArrayList<Integer> qty = new ArrayList<>();
     private Cart cartt;
-    int j,k,q;
+    int j,kz,q;
     private StorageReference SR = FirebaseStorage.getInstance().getReference();
 
 
@@ -59,8 +59,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         String title = data.get(i);
         String desc = data2.get(i);
         Integer qty = data3.get(i);
-        k = Integer.parseInt(desc);
-        k = k*qty;
+        kz = Integer.parseInt(desc);
+        kz = kz*qty;
         Log.d("output","qty = "+qty);
         Log.d("output","i = "+i);
         StorageReference itemref = SR.child("Items/"+title+".jpg");
@@ -77,7 +77,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             viewHolder.textTitle.setText(title);
             viewHolder.textdesc3.setText("Rs."+desc);
             viewHolder.textdesc2.setText("x "+qty);
-            viewHolder.textDescription.setText("Rs."+k);
+            viewHolder.textDescription.setText("Rs."+kz);
             itemref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri1) {

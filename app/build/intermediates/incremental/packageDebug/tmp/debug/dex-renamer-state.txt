@@ -1,12 +1,12 @@
-#Thu Jun 03 09:44:05 IST 2021
+#Mon Jun 07 21:56:51 IST 2021
 path.3=classes2.dex
 path.2=8/classes.dex
 path.1=0/classes.dex
 path.0=classes.dex
-base.3=E\:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.2=E\:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.1=E\:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.0=E\:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.3=C\:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.2=C\:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.1=C\:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.0=C\:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex

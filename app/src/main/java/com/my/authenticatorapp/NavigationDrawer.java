@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -22,6 +24,7 @@ public class NavigationDrawer extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
+    ImageView imgc;
 
 
     private Toolbar toolbar;
@@ -30,6 +33,14 @@ public class NavigationDrawer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
         toolbar=findViewById(R.id.myToolBar);
+        imgc = findViewById(R.id.Imagec);
+        Intent intent3 = new Intent(NavigationDrawer.this, Cart.class);
+        imgc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent3);
+            }
+        });
 
         setSupportActionBar(toolbar);
         setUpToolbar();
@@ -55,7 +66,6 @@ public class NavigationDrawer extends AppCompatActivity {
                         break;
 
                     case  R.id.cart:
-                        Intent intent3 = new Intent(NavigationDrawer.this, Cart.class);
                         startActivity(intent3);
                         break;
 

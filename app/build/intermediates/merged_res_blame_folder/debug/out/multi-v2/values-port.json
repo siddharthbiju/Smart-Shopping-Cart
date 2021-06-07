@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\ssc app development\\smart-shopping-cart123\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "C:\\Users\\sachi\\AndroidStudioProjects\\smart-shopping-cart\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\MY PC\\.gradle\\caches\\transforms-2\\files-2.1\\6522ae235c0c8d64202d413f3a34585e\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\sachi\\.gradle\\caches\\transforms-2\\files-2.1\\6522ae235c0c8d64202d413f3a34585e\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
