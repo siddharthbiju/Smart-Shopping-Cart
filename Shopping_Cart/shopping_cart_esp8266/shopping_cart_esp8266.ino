@@ -195,26 +195,34 @@ void tap(Button2& btn) {
               isLocked=0;
             }
             String testingValue = doc["fields"]["status"]["stringValue"];
-            if (testingValue.equals("false")){
-              Serial.println(testingValue);
-              isLocked=0;
+            if (testingValue.equals("true")){              
+              if(isLocked==0){
+                Serial.println(testingValue);
+                digitalWrite(D0, HIGH);
+                dataMillisLock = millis();
+                isLocked=1;
+                count = 0;
+                digitalWrite(D1, LOW); 
+                delay(100);
+                digitalWrite(D1, HIGH);
+                delay(50);  
+                digitalWrite(D1, LOW); 
+                delay(100);
+                digitalWrite(D1, HIGH);
+                delay(50);  
+                digitalWrite(D1, LOW); 
+                delay(100);
+                digitalWrite(D1, HIGH);  
+              }
             }else{
               Serial.println(testingValue);
-              digitalWrite(D0, HIGH);
-              dataMillisLock = millis();
-              isLocked=1;
-              count = 0;
+              isLocked=0;
               digitalWrite(D1, LOW); 
-              delay(100);
+              delay(3000);
               digitalWrite(D1, HIGH);
-              delay(50);  
+              delay(500);  
               digitalWrite(D1, LOW); 
-              delay(100);
-              digitalWrite(D1, HIGH);
-              delay(50);  
-              digitalWrite(D1, LOW); 
-              delay(100);
-              digitalWrite(D1, HIGH);  
+              delay(3000);
             }
             Serial.println("------------------------------------");
             Serial.println();
