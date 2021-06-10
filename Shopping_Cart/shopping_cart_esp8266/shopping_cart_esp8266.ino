@@ -137,7 +137,7 @@ void loop()
 } 
 
 void writeToFirebase(String x){
-  if (millis() - dataMillis > 100 || dataMillis == 0)
+  if (millis() - dataMillis > 1000 || dataMillis == 0)
     {
         dataMillis = millis();
 
@@ -196,7 +196,7 @@ void tap(Button2& btn) {
             }
             String testingValue = doc["fields"]["status"]["stringValue"];
             if (testingValue.equals("true")){              
-              if(isLocked==0){
+              if(isLocked==0 && (dataMillisLock == 0 || millis() - dataMillisLock > 35000)){
                 Serial.println(testingValue);
                 digitalWrite(D0, HIGH);
                 dataMillisLock = millis();
